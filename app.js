@@ -10,6 +10,7 @@ var mainRouter = require('./routes/main-app');
 var checkoutRouter = require('./routes/checkout');
 var webhookRouter = require('./routes/webhook');
 var getapikeyRouter = require('./routes/getapikey');
+var porteRouter = require('./routes/portefeuille');
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -41,6 +42,7 @@ app.use('/users', usersRouter);
 app.use('/checkout', checkoutRouter);
 app.use('/webhook', webhookRouter);
 app.use('/getapikey', getapikeyRouter);
+app.use('/portefeuille', porteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
