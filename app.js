@@ -4,15 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var mainRouter = require('./routes/main-app');
-var checkoutRouter = require('./routes/checkout');
-var webhookRouter = require('./routes/webhook');
-var getapikeyRouter = require('./routes/getapikey');
-var porteRouter = require('./routes/portefeuille');
+var indexRouter = require('./src/index');
+var usersRouter = require('./src/users');
+var mainRouter = require('./src/main-app');
+var checkoutRouter = require('./src/checkout');
+var webhookRouter = require('./src/webhook');
+var getapikeyRouter = require('./src/getapikey');
+var porteRouter = require('./src/portefeuille');
 var bodyParser = require('body-parser');
-const registerRouter = require('./routes/register');
+const registerRouter = require('./src/register');
 var app = express();
 
 var options = {
