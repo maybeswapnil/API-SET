@@ -15,6 +15,10 @@ var bodyParser = require('body-parser');
 const registerRouter = require('./src/register');
 var app = express();
 
+app.listen(2000, () => {
+  console.log("deployed")
+})
+
 var options = {
   inflate: true,
   limit: '100kb',
