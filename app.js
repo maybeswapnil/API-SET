@@ -14,6 +14,8 @@ var porteRouter = require('./src/portefeuille');
 var bodyParser = require('body-parser');
 const registerRouter = require('./src/register');
 var app = express();
+var cors = require('cors')
+app.use(cors())
 var port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log("deployed")
