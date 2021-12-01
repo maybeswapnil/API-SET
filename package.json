@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "build": "babel src --out-dir lib"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -17,5 +18,10 @@
     "mongodb": "^4.1.4",
     "morgan": "~1.9.1",
     "stripe": "^8.188.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "babel-install": "2.1.0"
   }
 }
