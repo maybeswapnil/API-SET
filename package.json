@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "build": "babel src --out-dir lib"
   },
   "dependencies": {
     "axios": "^0.24.0",
     "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",

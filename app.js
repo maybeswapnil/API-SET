@@ -13,17 +13,19 @@ var getapikeyRouter = require('./src/getapikey');
 var porteRouter = require('./src/portefeuille');
 var bodyParser = require('body-parser');
 const registerRouter = require('./src/register');
+const workRouter = require('./src/work');
+const csvtojsonRouter = require('./src/csvtojson');
 
 var app = express();
 
-var cors = require('cors')
+var cors = require('cors');
 
 app.use(cors())
-
-var port = process.env.PORT || 3000;
+const style = 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)';
+var port = process.env.PORT || 4000;
 
 app.listen(port, () => {
-  console.log("deployed")
+  console.log('%c' + new Date() + ' Server Deployed', style)
 })
 
 var options = {  
@@ -56,6 +58,8 @@ app.use('/webhook', webhookRouter);
 app.use('/getapikey', getapikeyRouter);
 app.use('/portefeuille', porteRouter);
 app.use('/register', registerRouter);
+app.use('/work', workRouter);
+app.use('/csvtojson', csvtojsonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -70,7 +74,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error')
 });
 
 module.exports = app;
