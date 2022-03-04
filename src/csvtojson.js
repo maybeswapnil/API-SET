@@ -14,7 +14,6 @@ csvtojsonRouter.post('*', (req, res) => {
         if(index!==0) {
             const values = item.split('\t');
             var obj = {};
-
             for(var i = 0;i<headers.length;i++) {
                 obj[headers[i]] = values[i];
             }

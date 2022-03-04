@@ -15,6 +15,7 @@ var bodyParser = require('body-parser');
 const registerRouter = require('./src/register');
 const workRouter = require('./src/work');
 const csvtojsonRouter = require('./src/csvtojson');
+const infoRouter = require('./src/info');
 
 var app = express();
 
@@ -60,6 +61,7 @@ app.use('/portefeuille', porteRouter);
 app.use('/register', registerRouter);
 app.use('/work', workRouter);
 app.use('/csvtojson', csvtojsonRouter);
+app.use('/info', infoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
