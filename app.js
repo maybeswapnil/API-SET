@@ -16,7 +16,7 @@ const registerRouter = require('./src/register');
 const workRouter = require('./src/work');
 const csvtojsonRouter = require('./src/csvtojson');
 const infoRouter = require('./src/info');
-
+const nasaRouter = require('./src/nasa')
 var app = express();
 
 var cors = require('cors');
@@ -62,6 +62,7 @@ app.use('/register', registerRouter);
 app.use('/work', workRouter);
 app.use('/csvtojson', csvtojsonRouter);
 app.use('/info', infoRouter);
+app.use('/location', nasaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
