@@ -6,12 +6,9 @@ const axios = require('axios');
 
 var config = {
     method: 'get',
-    url: 'https://api.n2yo.com/rest/v1/satellite/above/-10/-400/0/90/18/&apiKey=FUPTMU-T7GSDK-X5LJB6-4UYR',
+    url: 'https://api.n2yo.com/rest/v1/satellite/above/10/-400/0/90/18/&apiKey=FUPTMU-T7GSDK-X5LJB6-4UYR',
     headers: { }
   };
-
-  
- 
 
 var response = {
     "error": "internal server failure",
