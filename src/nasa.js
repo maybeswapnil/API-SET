@@ -9,6 +9,7 @@ var config = {
     url: 'https://api.n2yo.com/rest/v1/satellite/above/10/-286.014/0/70/18/&apiKey=FUPTMU-T7GSDK-X5LJB6-4UYR',
     headers: { }
   };
+
   
  
 
@@ -18,6 +19,22 @@ var response = {
         "string": "error"
     }
 }
+
+nasaRouter.get('/raw', function(req, res, next) {
+    var data;
+    console.log('asdasdas')
+    axios(config)
+    .then(function (response) {
+        res.json(response.data)
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    
+    
+});  
 
 
 nasaRouter.get('*', function(req, res, next) {
