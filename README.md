@@ -1,7 +1,8 @@
 
 # API SET
-Express APIs for Frontend applications.
-This App displays the real time information and location of the Satellites above you.<br/>
+Express APIs for Frontend applications.\
+It contains API to convert CSV format to JSON, Satellites locator API, etc.\
+This App manipulates raw data returned by n2yo API and returns the real time information and location of the Satellites above you in JSON format.<br/>
 We use N2YO APIs to extract data, that data is used to calculate the real x, y, z coordinates.<br/>
 URL: https://new-api-name.herokuapp.com<br/>
 ```
