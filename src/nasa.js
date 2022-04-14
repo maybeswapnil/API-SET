@@ -36,25 +36,20 @@ nasaRouter.get('/raw', function(req, res, next) {
 
 nasaRouter.get('*', function(req, res, next) {
     var data;
-    console.log('asdasdas')
     axios(config)
     .then(function (response) {
         res.json(main(response.data))
-
     })
     .catch(function (error) {
       console.log(error);
     });
-
-    
-    
 });  
 
 const llarToWorld = (satlat, satlng, satalt, rad, name) => {
     x = Math.sin(satlng) * Math.cos(satlat)
     z = Math.sin(satlng) * Math.sin(satlat)
     y = Math.cos(satlng)
-    return [x , y , satalt, name]
+    return [x , y , z, name]
 }
 
 var main = (data) => {
