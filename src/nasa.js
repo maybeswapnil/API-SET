@@ -58,7 +58,7 @@ nasaRouter.get('*', function(req, res, next) {
     var a3 = axios(config3)
     
     Promise.all([a1, a2, a3]).then(function (response) {
-        var k = [...main(response[0].data), ...main(response[0].data), ...main(response[0].data)]
+        var k = [...main(response[0].data), ...main(response[1].data), ...main(response[2].data)]
         res.json(k)
         console.log(k)
 
