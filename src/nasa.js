@@ -54,7 +54,7 @@ const llarToWorld = (satlat, satlng, satalt, rad, name) => {
     x = Math.sin(satlng) * Math.cos(satlat)
     z = Math.sin(satlng) * Math.sin(satlat)
     y = Math.cos(satlng)
-    return [x , y , satalt, name]
+    return [x , y , z, name]
 }
 
 var main = (data) => {
