@@ -6,17 +6,17 @@ const axios = require('axios');
 
 var config1 = {
     method: 'get',
-    url: 'https://api.n2yo.com/rest/v1/satellite/above/0/0/0/90/18/&apiKey=FUPTMU-T7GSDK-X5LJB6-4UYR',
+    url: 'https://api.n2yo.com/rest/v1/satellite/above/0/0/0/90/18/&apiKey=B92G3G-C7LYLX-CZKD3U-4V6E',
     headers: { }
 };
 var config2 = {
     method: 'get',
-    url: 'https://api.n2yo.com/rest/v1/satellite/above/10/-400/0/90/18/&apiKey=FUPTMU-T7GSDK-X5LJB6-4UYR',
+    url: 'https://api.n2yo.com/rest/v1/satellite/above/10/-400/0/90/18/&apiKey=B92G3G-C7LYLX-CZKD3U-4V6E',
     headers: { }
 };
 var config3 = {
     method: 'get',
-    url: 'https://api.n2yo.com/rest/v1/satellite/above/10/72/0/90/18/&apiKey=FUPTMU-T7GSDK-X5LJB6-4UYR',
+    url: 'https://api.n2yo.com/rest/v1/satellite/above/10/72/0/90/18/&apiKey=B92G3G-C7LYLX-CZKD3U-4V6E',
     headers: { }
 };
 
