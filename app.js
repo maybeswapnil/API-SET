@@ -18,9 +18,11 @@ const csvtojsonRouter = require('./src/csvtojson');
 const infoRouter = require('./src/info');
 const nasaRouter = require('./src/nasa')
 const Gamification = require('./src/Gamification')
+const iconsRouter = require('./src/IconsPortfolio')
 var app = express();
 
 var cors = require('cors');
+const { BADQUERY } = require('dns');
 
 app.use(cors())
 const style = 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)';
@@ -64,6 +66,40 @@ app.use('/work', workRouter);
 app.use('/csvtojson', csvtojsonRouter);
 app.use('/info', infoRouter);
 app.use('/location', nasaRouter);
+app.use('/icons', iconsRouter);
+var localDB = {}
+app.post('/handle', (req, res) => {
+  console.log(req.body)
+  try {
+    var body = req.body;
+    if(body['operator']=='set') {
+        localDB[body.key] = body.value
+        res.send(201)
+    }
+    if(body['operator']=='get') {
+      if(body.key && body.key in localDB) {
+        return res.send(localDB[body.key])
+      }
+      res.send('invalid value')
+    }
+    if(body['operator']=='del') {
+      delete localDB[body.key]
+      res.send('deleted')
+    }
+    if(body['operator']=='keys') {
+      var keyArray = Object.keys(localDB)
+      res.send(keyArray)
+    }
+    if(body['operator']=='flushall') {
+      localDB = {}
+      res.send('flushed')
+    }
+  } catch(e) {
+      res.status(400).send('Bad Request')
+  }
+ 
+});
+
 
 app.use('/gamification/users', Gamification);
 
@@ -75,6 +111,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  console.log(err)
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
