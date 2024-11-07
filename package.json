@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "start-dev": "nodemon app.js",
-    "build": "babel src --out-dir lib"
+    "dev": "nodemon app.js",
+    "prod": "NODE_ENV=production node app.js",
+    "lint": "eslint .",
+    "clean": "rm -rf build",
+    "build": "npm run clean && npm run lint && echo 'Build completed!'"
   },
   "dependencies": {
     "axios": "^0.24.0",
