@@ -19,6 +19,7 @@ const infoRouter = require('./src/info');
 const nasaRouter = require('./src/nasa')
 const Gamification = require('./src/Gamification')
 const iconsRouter = require('./src/IconsPortfolio')
+const spotifyRouter = require('./src/spotify')
 var app = express();
 
 var cors = require('cors');
@@ -67,6 +68,8 @@ app.use('/csvtojson', csvtojsonRouter);
 app.use('/info', infoRouter);
 app.use('/location', nasaRouter);
 app.use('/icons', iconsRouter);
+app.use('/spotify/nowplaying', spotifyRouter);
+
 var localDB = {}
 app.post('/handle', (req, res) => {
   console.log(req.body)
